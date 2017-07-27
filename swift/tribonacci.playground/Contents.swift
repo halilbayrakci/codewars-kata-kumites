@@ -21,14 +21,13 @@
 
 func tribonacci(_ signature: [Int], _ n: Int) -> [Int] {
     var tribonacci = signature
-    if n < 3 {
-        return Array(signature[0..<n])
-    } else {
-        for i in 0...n-4 {
-            tribonacci.append(tribonacci[i] + tribonacci[i+1] + tribonacci[i+2])
-        }
+    if n == 0 {
+        return []
     }
-    return tribonacci
+    for i in 0...n {
+        tribonacci.append(tribonacci[i] + tribonacci[i+1] + tribonacci[i+2])
+    }
+    return Array(tribonacci[0..<n])
 }
 
 tribonacci([1,1,1], 1)
